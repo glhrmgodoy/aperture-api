@@ -27,22 +27,19 @@ public class Movie {
     @Column(nullable = false)
     private String title;
 
-    @Column(name = "original_title")
-    private String originalTitle;
-
-    @Column(name = "release_year", nullable = false)
-    private String releaseYear;
+    @Column(nullable = false)
+    private Integer releaseYear;
 
     @Column(nullable = false)
     private String director;
 
-    @Column(nullable = false, length = 1000)
+    @Column(nullable = false, length = 600)
     private String synopsis;
 
-    @Column(name = "poster_url", nullable = false)
+    @Column(nullable = false)
     private String posterUrl;
 
-    @Column(name = "run_time_minutes", nullable = false)
+    @Column(nullable = false)
     private Integer runTimeMinutes;
 
     @ElementCollection(targetClass = Genre.class)
@@ -52,7 +49,7 @@ public class Movie {
     private List<Genre> genres;
 
     @CreatedDate
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @Column(nullable = false)

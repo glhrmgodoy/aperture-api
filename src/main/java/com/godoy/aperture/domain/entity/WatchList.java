@@ -34,6 +34,6 @@ public class WatchList {
     private Movie movie;
 
     @CreatedDate
-    @Column(name = "added_at", nullable = false, updatable = false)
+    @Column(nullable = false, updatable = false)
     private LocalDateTime addedAt;
 }
