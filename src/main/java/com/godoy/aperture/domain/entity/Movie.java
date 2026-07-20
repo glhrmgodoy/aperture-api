@@ -40,7 +40,7 @@ public class Movie {
     private String posterUrl;
 
     @Column(nullable = false)
-    private Integer runTimeMinutes;
+    private Integer runtimeMinutes;
 
     @ElementCollection(targetClass = Genre.class)
     @CollectionTable(name = "movie_genres", joinColumns = @JoinColumn(name = "movie_id"))

@@ -24,7 +24,7 @@ public record MovieRequest(
 
         @NotNull(message = "Duração é obrigatória")
         @Positive
-        Integer runTimeMinutes,
+        Integer runtimeMinutes,
 
         @NotEmpty(message = "Gênero é obrigatório")
         List<Genre> genres

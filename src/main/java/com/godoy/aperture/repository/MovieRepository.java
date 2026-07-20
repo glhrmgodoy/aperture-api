@@ -13,9 +13,11 @@ import java.util.UUID;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, UUID> {
 
-    Page<Movie> findByTiTleContainingIgnoreCase(String title, Pageable pageable);
+    Page<Movie> findByTitleContainingIgnoreCase(String title, Pageable pageable);
 
-    Page<Movie> findByReleaseYear(Interval releaseYear, Pageable pageable);
+    Page<Movie> findByReleaseYear(Integer releaseYear, Pageable pageable);
 
     Page<Movie> findByGenresContaining(Genre genre, Pageable pageable);
+
+    Page<Movie> findByDirectorContainingIgnoreCase(String director, Pageable pageable);
 }

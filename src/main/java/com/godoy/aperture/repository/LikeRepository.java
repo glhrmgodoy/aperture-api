@@ -13,6 +13,4 @@ public interface LikeRepository extends JpaRepository<Like, UUID> {
     Optional<Like> findByUserIdAndReviewId(UUID userId, UUID reviewId);
 
     long countByReviewId(UUID reviewId);
-
-    boolean existsByUserIdAndReviewId(UUID userId, UUID reviewId);
 }
