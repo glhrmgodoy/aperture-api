@@ -16,8 +16,7 @@ public record MovieRequest(
         @NotBlank(message = "Diretor é obrigatório")
         String director,
 
-        @NotBlank(message = "Sinopse é obrigatório")
-        @Size(max = 600)
+        @Size(max = 1000)
         String synopsis,
 
         String posterUrl,

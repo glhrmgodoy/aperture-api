@@ -35,6 +35,6 @@ public class FollowController {
 
     @GetMapping("/{userId}/following")
     public ResponseEntity<List<FollowResponse>> findFollowing(@PathVariable UUID userId) {
-        return ResponseEntity.ok(followService.findFollowers(userId));
+        return ResponseEntity.ok(followService.findFollowing(userId));
     }
 }

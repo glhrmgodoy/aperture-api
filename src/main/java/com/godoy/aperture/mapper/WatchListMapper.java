@@ -9,7 +9,7 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface WatchListMapper {
 
-    @Mapping(source = "movieId", target = "movie.id")
-    @Mapping(source = "movieTitle", target = "movie.title")
+    @Mapping(target = "movieId", source = "movie.id")
+    @Mapping(target = "movieTitle", source = "movie.title")
     WatchListResponse toResponse(WatchList watchList);
 }

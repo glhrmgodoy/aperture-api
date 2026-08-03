@@ -15,5 +15,5 @@ public interface ListItemRepository extends JpaRepository<ListItem, UUID> {
 
     Optional<ListItem> findByCustomListIdAndMovieId(UUID customListId, UUID movieId);
 
-    boolean existsByCustomListIAndMovieId(UUID customListId, UUID movieId);
+    boolean existsByCustomListIdAndMovieId(UUID customListId, UUID movieId);
 }

@@ -14,7 +14,7 @@ public interface ListItemMapper {
     @Mapping(target = "movie", ignore = true)
     ListItem toEntity(ListItemRequest request);
 
-    @Mapping(source = "movieId", target = "movie.id")
-    @Mapping(source = "movieTitle", target = "movie.title")
+    @Mapping(target = "movieId", source = "movie.id")
+    @Mapping(target = "movieTitle", source = "movie.title")
     ListItemResponse toResponse(ListItem listItem);
 }

@@ -79,6 +79,6 @@ public class UserService {
                 .orElseThrow(() -> new NotFoundException("Usuário não encontrado"));
 
         user.setActive(false);
-        userRepository.delete(user);
+        userRepository.save(user);
     }
 }

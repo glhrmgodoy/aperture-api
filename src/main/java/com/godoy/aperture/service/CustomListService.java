@@ -43,6 +43,9 @@ public class CustomListService {
     }
 
     public Page<CustomListResponse> findByUserId(UUID userId, Pageable pageable) {
+        userRepository.findById(userId)
+                .orElseThrow(() -> new NotFoundException("Usuário não encontrado"));
+
         return customListRepository.findByUserId(userId, pageable)
                 .map(customListMapper::toResponse);
     }
@@ -69,6 +72,7 @@ public class CustomListService {
 
         return customListMapper.toResponse(updated);
     }
+
     public void delete(UUID id, UUID authenticatedUserId) {
         CustomList customList = customListRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Lista não encontrada"));
@@ -80,7 +84,7 @@ public class CustomListService {
 
     public void validateOwner(CustomList customList, UUID authenticatedUserId) {
         if (!customList.getUser().getId().equals(authenticatedUserId)) {
-            throw new BusinessException("Usuário não tem permissão para esta lista");
+            throw new BusinessException("Usuário não tem permissão para alterar essa lista");
         }
     }
 }

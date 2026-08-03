@@ -28,8 +28,8 @@ public class ListItemController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ListItemResponse>> findByList(@PathVariable UUID customListId) {
-        return ResponseEntity.ok(listItemService.findByList(customListId));
+    public ResponseEntity<List<ListItemResponse>> findByListId(@PathVariable UUID customListId) {
+        return ResponseEntity.ok(listItemService.findByListId(customListId));
     }
 
     @DeleteMapping("/{movieId}")

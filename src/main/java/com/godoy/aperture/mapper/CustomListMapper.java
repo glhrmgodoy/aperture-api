@@ -13,6 +13,6 @@ public interface CustomListMapper {
     @Mapping(target = "user", ignore = true)
     CustomList toEntity(CustomListRequest request);
 
-    @Mapping(source = "userId", target = "user.id")
+    @Mapping(target = "userId", source = "user.id")
     CustomListResponse toResponse(CustomList customList);
 }

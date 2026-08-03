@@ -33,17 +33,20 @@ public class Movie {
     @Column(nullable = false)
     private String director;
 
-    @Column(nullable = false, length = 600)
+    @Column(length = 1000)
     private String synopsis;
 
-    @Column(nullable = false)
+    @Column
     private String posterUrl;
 
     @Column(nullable = false)
     private Integer runtimeMinutes;
 
-    @ElementCollection(targetClass = Genre.class)
-    @CollectionTable(name = "movie_genres", joinColumns = @JoinColumn(name = "movie_id"))
+    @ElementCollection
+    @CollectionTable(
+            name = "movie_genres",
+            joinColumns = @JoinColumn(name = "movie_id")
+    )
     @Enumerated(EnumType.STRING)
     @Column(name = "genre", nullable = false)
     private List<Genre> genres;

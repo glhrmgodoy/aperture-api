@@ -9,9 +9,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(
-        name = "follows",
-        uniqueConstraints = @UniqueConstraint(name = "uk_follows_follower_following", columnNames = {"follower_id", "following_id"})
+@Table(name = "follows"
 )
 @EntityListeners(AuditingEntityListener.class)
 @Getter

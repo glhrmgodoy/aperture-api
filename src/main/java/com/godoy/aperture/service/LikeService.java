@@ -20,12 +20,12 @@ public class LikeService {
     private final UserRepository userRepository;
     private final ReviewRepository reviewRepository;
 
-    public void toggle(UUID userId, UUID reviewId ) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new NotFoundException("Usuário não encontrado"));
-
+    public void toggle(UUID reviewId, UUID userId) {
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new NotFoundException("Review não encontrada"));
+
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new NotFoundException("Usuário não encontrado"));
 
         likeRepository.findByUserIdAndReviewId(userId, reviewId)
                 .ifPresentOrElse(

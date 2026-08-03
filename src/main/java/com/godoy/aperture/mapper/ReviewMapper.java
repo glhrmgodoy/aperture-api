@@ -14,9 +14,9 @@ public interface ReviewMapper {
     @Mapping(target = "movie", ignore = true)
     Review toEntity(ReviewRequest request);
 
-    @Mapping(source = "userId", target = "user.id")
-    @Mapping(source = "username", target = "user.username")
-    @Mapping(source = "movieId", target = "movie.id")
-    @Mapping(source = "movieTitle", target = "movie.title")
+    @Mapping(target = "userId", source = "user.id")
+    @Mapping(target = "username", source = "user.username")
+    @Mapping(target = "movieId", source = "movie.id")
+    @Mapping(target = "movieTitle", source = "movie.title")
     ReviewResponse toResponse(Review review);
 }

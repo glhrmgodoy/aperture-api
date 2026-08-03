@@ -12,10 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(
-        name = "reviews",
-        uniqueConstraints = @UniqueConstraint(name = "uk_reviews_user_movie", columnNames = {"user_id", "movie_id"})
-)
+@Table(name = "reviews")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
@@ -39,7 +36,7 @@ public class Review {
     @Column(nullable = false)
     private BigDecimal rating;
 
-    @Column(nullable = false, length = 2000)
+    @Column(length = 2000)
     private String reviewText;
 
     @Column(nullable = false)

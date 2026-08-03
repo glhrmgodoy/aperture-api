@@ -36,7 +36,7 @@ public class ListItemService {
         Movie movie = movieRepository.findById(request.movieId())
                 .orElseThrow(() -> new NotFoundException("Filme não encontrado"));
 
-        if (listItemRepository.existsByCustomListIAndMovieId(customListId, movie.getId())) {
+        if (listItemRepository.existsByCustomListIdAndMovieId(customListId, movie.getId())) {
             throw new BusinessException("Este filme já está na lista");
         }
 
@@ -53,7 +53,7 @@ public class ListItemService {
         return listItemMapper.toResponse(saved);
     }
 
-    public List<ListItemResponse> findByList(UUID customListId) {
+    public List<ListItemResponse> findByListId(UUID customListId) {
         customListRepository.findById(customListId)
                 .orElseThrow(() -> new NotFoundException("Lista não encontrada"));
 

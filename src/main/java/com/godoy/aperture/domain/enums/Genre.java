@@ -9,6 +9,7 @@ public enum Genre {
     DOCUMENTARY,
     DRAMA,
     FANTASY,
+    HISTORY,
     HORROR,
     MUSICAL,
     MYSTERY,
