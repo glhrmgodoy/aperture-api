@@ -39,8 +39,8 @@ public class CustomList {
     @Column(nullable = false)
     private ListVisibility visibility;
 
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    @Builder.Default
     private Boolean ranked = false;
 
     @CreatedDate
@@ -51,6 +51,6 @@ public class CustomList {
     @Column(nullable = false)
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "custom_list")
+    @OneToMany(mappedBy = "customList")
     private List<ListItem> listItems;
 }
