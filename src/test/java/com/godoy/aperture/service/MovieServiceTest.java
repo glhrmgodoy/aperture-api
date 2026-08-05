@@ -26,9 +26,7 @@ import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -106,7 +104,7 @@ class MovieServiceTest {
             assertThat(result.title()).isEqualTo(request.title());
             assertThat(result.releaseYear()).isEqualTo(request.releaseYear());
             assertThat(result.director()).isEqualTo(request.director());
-            assertThat(result.runTimeMinutes()).isEqualTo(request.runtimeMinutes());
+            assertThat(result.runtimeMinutes()).isEqualTo(request.runtimeMinutes());
             assertThat(result.genres()).isEqualTo(request.genres());
 
             verify(movieMapper).toEntity(request);
@@ -135,7 +133,7 @@ class MovieServiceTest {
             assertThat(result.title()).isEqualTo(movie.getTitle());
             assertThat(result.releaseYear()).isEqualTo(movie.getReleaseYear());
             assertThat(result.director()).isEqualTo(movie.getDirector());
-            assertThat(result.runTimeMinutes()).isEqualTo(movie.getRuntimeMinutes());
+            assertThat(result.runtimeMinutes()).isEqualTo(movie.getRuntimeMinutes());
             assertThat(result.genres()).isEqualTo(movie.getGenres());
 
             verify(movieRepository).findById(movie.getId());
@@ -423,7 +421,7 @@ class MovieServiceTest {
             assertThat(result.title()).isEqualTo(updateRequest.title());
             assertThat(result.releaseYear()).isEqualTo(updateRequest.releaseYear());
             assertThat(result.director()).isEqualTo(updateRequest.director());
-            assertThat(result.runTimeMinutes()).isEqualTo(updateRequest.runtimeMinutes());
+            assertThat(result.runtimeMinutes()).isEqualTo(updateRequest.runtimeMinutes());
             assertThat(result.genres()).isEqualTo(updateRequest.genres());
 
             verify(movieRepository).findById(movie.getId());
