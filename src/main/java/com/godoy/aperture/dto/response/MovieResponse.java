@@ -13,7 +13,7 @@ public record MovieResponse(
         String director,
         String synopsis,
         String posterUrl,
-        Integer runTimeMinutes,
+        Integer runtimeMinutes,
         List<Genre> genres,
         LocalDateTime createdAt
 ) {

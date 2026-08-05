@@ -10,8 +10,13 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ReviewMapper {
 
+    @Mapping(target = "id", ignore = true)
     @Mapping(target = "user", ignore = true)
     @Mapping(target = "movie", ignore = true)
+    @Mapping(target = "createdAt", ignore = true)
+    @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "comments", ignore = true)
+    @Mapping(target = "likes", ignore = true)
     Review toEntity(ReviewRequest request);
 
     @Mapping(target = "userId", source = "user.id")

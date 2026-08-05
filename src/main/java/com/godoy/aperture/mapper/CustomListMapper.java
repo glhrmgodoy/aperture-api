@@ -10,7 +10,11 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface CustomListMapper {
 
+    @Mapping(target = "id", ignore = true)
     @Mapping(target = "user", ignore = true)
+    @Mapping(target = "createdAt", ignore = true)
+    @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "listItems", ignore = true)
     CustomList toEntity(CustomListRequest request);
 
     @Mapping(target = "userId", source = "user.id")

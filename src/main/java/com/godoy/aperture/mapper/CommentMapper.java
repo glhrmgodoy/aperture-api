@@ -10,8 +10,10 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface CommentMapper {
 
+    @Mapping(target = "id", ignore = true)
     @Mapping(target = "review", ignore = true)
     @Mapping(target = "user", ignore = true)
+    @Mapping(target = "createdAt", ignore = true)
     Comment toEntity(CommentRequest request);
 
     @Mapping(target = "userId", source = "user.id")

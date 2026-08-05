@@ -10,8 +10,10 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ListItemMapper {
 
+    @Mapping(target = "id", ignore = true)
     @Mapping(target = "customList", ignore = true)
     @Mapping(target = "movie", ignore = true)
+    @Mapping(target = "addedAt", ignore = true)
     ListItem toEntity(ListItemRequest request);
 
     @Mapping(target = "movieId", source = "movie.id")

@@ -14,6 +14,6 @@ public record ReviewResponse(
         String reviewText,
         Boolean containsSpoilers,
         LocalDateTime createdAt,
-        LocalDateTime updateAt
+        LocalDateTime updatedAt
 ) {
 }
